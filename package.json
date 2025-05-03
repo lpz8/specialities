@@ -1,15 +1,24 @@
 {
   "name": "specialities",
   "version": "1.0.0",
-  "description": "",
+  "description": "Este ejercicio tiene como objetivo practicar el uso de Express para crear un servidor web que gestiona y muestra información de usuarios en diferentes rutas. Utilizaremos un conjunto de datos en formato JSON que representa usuarios con diversas características, como nombre, edad y especialidad.",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
-  }
+    "express": "^4.21.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lpz8/specialities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lpz8/specialities/issues"
+  },
+  "homepage": "https://github.com/lpz8/specialities#readme"
 }
