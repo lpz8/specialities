@@ -5,7 +5,6 @@ const port = 3000;
 const usersData = [
     { id: 1, name: 'Alice', age: 28, specialty: 'marketing' },
     { id: 2, name: 'Bob', age: 35, specialty: 'developers' },
-    
 ];
 
 function filterUsersBySpecialty(specialty) {
@@ -18,7 +17,7 @@ app.get('/', (req, res) => {
         <nav>
             <ul>
                 <li><a href="/">Inicio</a></li>
-                ${specialties.map(spec => `<li><a href="/\({spec}">\){spec.charAt(0).toUpperCase() + spec.slice(1)}</a></li>`).join('')}
+                ${specialties.map(spec => `<li><a href="/${spec}">${spec.charAt(0).toUpperCase() + spec.slice(1)}</a></li>`).join('')}
             </ul>
         </nav>
     `;
@@ -31,15 +30,12 @@ app.get('/', (req, res) => {
 
 app.get('/marketing', (req, res) => {
     const users = filterUsersBySpecialty('marketing');
-    const userList = users.map(user => `<li>ID: ${user.id} - Nombre: ${user.name}, Edad: ${user.age}</li>`).join('');
+    const userList = users.map(user => `<li>ID: ${user.id} - Nombre: ${user.name}, Edad: ${user.age}</li>`).join(''); // modificada
     const nav = `
         <nav>
             <ul>
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/marketing">Marketing</a></li>
-                <li><a href="/developers">Developers</a></li>
-                <li><a href="/QAs">QAs</a></li>
-                <li><a href="/ventas">Ventas</a></li>
             </ul>
         </nav>
     `;
@@ -50,8 +46,6 @@ app.get('/marketing', (req, res) => {
         ${nav}
     `);
 });
-
-
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
